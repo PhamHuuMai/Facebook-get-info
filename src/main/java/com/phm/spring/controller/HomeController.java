@@ -36,7 +36,7 @@ public class HomeController {
             facebook.setOAuthPermissions("email,publish_stream");
             facebook.setOAuthCallbackURL("");
             //facebook.setOAuthCallbackURL(_redirectURL);
-            AccessToken token = facebook.getOAuthAccessToken(FBConnection.getAccessToken(code));
+            AccessToken token = facebook.getOAuthAccessToken(code);
             String accessToken = token.getToken();
             if (accessToken == null) {
                 return null;
