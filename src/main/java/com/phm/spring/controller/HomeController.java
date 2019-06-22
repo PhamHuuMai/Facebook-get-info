@@ -15,7 +15,7 @@ public class HomeController {
     @ResponseBody
     public String action(@RequestParam(name = "ow", required = false) String ow,
             @RequestParam(name = "error", required = false) String error,
-            @RequestParam(name = "sr", required = false) String sr,
+            @RequestParam(name = "code", required = false) String sr,
             HttpServletRequest request) {
         String owAtt = (String) request.getAttribute("ow");
         String errorAtt = (String) request.getAttribute("error");
