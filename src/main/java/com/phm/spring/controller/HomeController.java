@@ -28,7 +28,8 @@ public class HomeController {
 
     @GetMapping("callback")
     @ResponseBody
-    public String action(@RequestParam(name = "code", required = false) String code) throws Exception {
+    public String action(@RequestParam(name = "code", required = false) String code) {
+        String aa = "";
         try {
             Facebook facebook = new FacebookFactory().getInstance();
             facebook.setOAuthAppId("415865425661793", "bb9136f15a8bdedd3b23c555dfff7d0e");
@@ -44,10 +45,10 @@ public class HomeController {
             String id = user.getId();
             String mail = user.getEmail();
             return "id = " + id + " = " + mail;
-        } catch (FacebookException ex) {
-            Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            aa = ex.getMessage();
         }
-        return "Lỗi con mẹ nó rồi ahihi";
+        return aa;
     }
 
     private String getCode(String code1, String cliSec) throws Exception {
