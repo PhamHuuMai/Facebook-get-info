@@ -38,20 +38,21 @@ public class HomeController {
     public String action(@RequestParam(name = "code", required = false) String code) {
         String aa = "";
         try {
-            Facebook facebook = new FacebookFactory().getInstance();
-            facebook.setOAuthAppId("415865425661793", "bb9136f15a8bdedd3b23c555dfff7d0e");
-            facebook.setOAuthPermissions("email,publish_stream");
-            facebook.setOAuthCallbackURL("");
-            //facebook.setOAuthCallbackURL(_redirectURL);
-            AccessToken token = facebook.getOAuthAccessToken(getAccessToken(code));
-            String accessToken = token.getToken();
-            if (accessToken == null) {
-                return null;
-            }
-            User user = facebook.getMe();
-            String id = user.getId();
-            String mail = user.getEmail();
-            return "id = " + id + " code = " + mail;
+//            Facebook facebook = new FacebookFactory().getInstance();
+//            facebook.setOAuthAppId("415865425661793", "bb9136f15a8bdedd3b23c555dfff7d0e");
+//            facebook.setOAuthPermissions("email");
+//            facebook.setOAuthCallbackURL("");
+//            //facebook.setOAuthCallbackURL(_redirectURL);
+//            String accessToken1 = getAccessToken(code);
+//            AccessToken token = facebook.getOAuthAccessToken(accessToken1);
+//            String accessToken = token.getToken();
+//            if (accessToken == null) {
+//                return null;
+//            }
+//            User user = facebook.getMe();
+//            String id = user.getId();
+//            String mail = user.getEmail();
+            return "id = " + code;
         } catch (Exception ex) {
             aa = ex.getLocalizedMessage();
         }
