@@ -46,9 +46,9 @@ public class HomeController {
             String mail = user.getEmail();
             return "id = " + id + " = " + mail;
         } catch (Exception ex) {
-            aa = ex.getMessage();
+            aa = ex.getLocalizedMessage();
         }
-        return aa;
+        return aa + " loi ";
     }
 
     private String getCode(String code1, String cliSec) throws Exception {
