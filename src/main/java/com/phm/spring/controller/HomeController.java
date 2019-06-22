@@ -13,9 +13,9 @@ public class HomeController {
 
     @GetMapping("callback")
     @ResponseBody
-    public String action(@RequestParam("ow") String ow,
-            @RequestParam("error") String error,
-            @RequestParam("sr") String sr,
+    public String action(@RequestParam(name = "ow", required = false) String ow,
+            @RequestParam(name = "error", required = false) String error,
+            @RequestParam(name = "sr", required = false) String sr,
             HttpServletRequest request) {
         String owAtt = (String) request.getAttribute("ow");
         String errorAtt = (String) request.getAttribute("error");
