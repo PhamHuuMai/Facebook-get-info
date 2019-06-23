@@ -13,7 +13,7 @@ public class FacebookAuthentication {
     private String code;
     private String accessToken;
 
-    private static final String REDIRECT_URL = "";
+    private static final String REDIRECT_URL = "https://maiph.herokuapp.com/callback";
     private static final String GET_ACCESS_TOKEN_URL_FORMAT = "https://graph.facebook.com/v3.3/oauth/access_token?client_id=%s&redirect_uri=%s&client_secret=%s&code=%s";
     private static final String GET_USER_INFO_URL_FORMAT = "https://graph.facebook.com/me?fields=%s&access_token=%s";
 
