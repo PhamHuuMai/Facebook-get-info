@@ -37,9 +37,6 @@ public class FacebookAuthentication {
 
     public FacebookUser getUserInfo() throws ParseException, Exception {
         accessToken = getAccessToken();
-        if (accessToken == null) {
-            throw new Exception();
-        }
         return getUser();
     }
 

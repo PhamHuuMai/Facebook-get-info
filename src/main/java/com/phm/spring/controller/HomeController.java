@@ -28,7 +28,7 @@ public class HomeController {
                 return "id = " + user.getId() + " = " + user.getName();
             }
         } catch (Exception ex) {
-            aa = ex.getLocalizedMessage();
+            aa = ex.getMessage();
         }
         return aa + " loi ";
     }
